@@ -1,11 +1,13 @@
-package main.java;
+package main.java.util;
+
+import java.util.ArrayList;
 
 /**
  * @author luzc
  * @date 2020/7/28 11:21
  * @desc
  */
-public class Person {
+public class Person implements Cloneable {
     private String name;
     private int age;
     private double height;
@@ -43,6 +45,16 @@ public class Person {
         this.weight = weight;
     }
 
+    private ArrayList<String> hobbies=new ArrayList<String>();
+
+    public ArrayList<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(ArrayList<String> hobbies) {
+        this.hobbies = hobbies;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -50,10 +62,12 @@ public class Person {
                 ", age=" + age +
                 ", height=" + height +
                 ", weight=" + weight +
+                ", hobbies=" + hobbies +
                 '}';
     }
 
-    //重载各种构造方法
+    //todo: 建造者模式
+    //建造者模式中重载各种构造方法
     public Person(String name, int age, double height, double weight) {
         this.name = name;
         this.age = age;
@@ -78,8 +92,7 @@ public class Person {
         this.height = height;
     }
 
-    //改造
-
+    //建造者模式改造
     private Person(Builder builder) {
         this.name=builder.name;
         this.age=builder.age;
@@ -117,5 +130,43 @@ public class Person {
             return new Person(this);
         }
     }
+
+
+    //todo:原型模式写法一
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Person person=null;
+        try {
+            person=(Person)super.clone();
+            person.name=this.name;
+            person.weight=this.weight;
+            person.height=this.height;
+            person.age=this.age;
+            //这样只是浅拷贝，两个对象指向的引用是同一个
+//            person.hobbies=this.hobbies;
+            //这样才是深拷贝
+            person.hobbies=(ArrayList<String>)this.hobbies.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return person;
+    }
+
+    //todo:原型模式写法二
+//    @Override
+//    public Object clone(){
+//        return new Person(this);
+//    }
+//
+//    public Person(Person person){
+//        this.name=person.name;
+//        this.weight=person.weight;
+//        this.height=person.height;
+//        this.age=person.age;
+//        this.hobbies= new ArrayList<String>(hobbies);
+//    }
+
+
+
 
 }

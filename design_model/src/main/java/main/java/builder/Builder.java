@@ -1,4 +1,7 @@
-package main.java;
+package main.java.builder;
+
+import main.java.util.Person;
+
 
 /**
  * @author luzc
