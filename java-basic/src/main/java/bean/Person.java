@@ -36,4 +36,8 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person o) {
         return 0;
     }
+
+    public void getString(){
+
+    }
 }

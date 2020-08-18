@@ -1,4 +1,4 @@
-package JSONDemo;
+package JSON;
 
 import bean.Person;
 import com.alibaba.fastjson.JSON;
