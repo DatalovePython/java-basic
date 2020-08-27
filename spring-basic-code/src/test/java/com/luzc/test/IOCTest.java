@@ -19,7 +19,7 @@ public class IOCTest {
 
     @SuppressWarnings("resource")
     @Test
-    public void test01(){
+    public void test01() {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
@@ -29,7 +29,7 @@ public class IOCTest {
 
     @SuppressWarnings("resource")
     @Test
-    public void test02(){
+    public void test02() {
 
 //        String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
 //        for (String beanDefinitionName : beanDefinitionNames) {
@@ -42,7 +42,7 @@ public class IOCTest {
     }
 
     @Test
-    public void test03(){
+    public void test03() {
         String[] beanNamesForType = annotationConfigApplicationContext.getBeanNamesForType(Person.class);
 
         ConfigurableEnvironment environment = annotationConfigApplicationContext.getEnvironment();
@@ -58,11 +58,11 @@ public class IOCTest {
     }
 
     @Test
-    public void testImport(){
+    public void testImport() {
         printBeans(annotationConfigApplicationContext);
     }
 
-    public void printBeans(AnnotationConfigApplicationContext annotationConfigApplicationContext){
+    public void printBeans(AnnotationConfigApplicationContext annotationConfigApplicationContext) {
         String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
