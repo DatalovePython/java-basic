@@ -10,6 +10,7 @@ import com.sun.istack.internal.NotNull;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.ArrayList;
 
 public class ArrayListCopy<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
 
