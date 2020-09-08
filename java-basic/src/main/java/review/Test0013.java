@@ -10,6 +10,8 @@ import java.util.Iterator;
  *
  * jdk1.8中，当ArrayList中元素的数量是2个时，本应报错的却不报错了
  *
+ * https://www.cnblogs.com/zhuyeshen/p/10956822.html
+ *
  */
 public class Test0013 {
     public static void main(String[] args) {
