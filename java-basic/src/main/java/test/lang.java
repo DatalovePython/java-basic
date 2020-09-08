@@ -8,30 +8,26 @@ package test;
 
 import java.io.Console;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class lang {
 
     public static void main(String[] args) {
-        int number = 10;
-        //原始数二进制
-        printInfo(number);
-        int numberLeft = number << 1;
-        //左移一位
-        printInfo(numberLeft);
-        int numberRight = number >> 1;
-        //右移一位
-        printInfo(numberRight);
-        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+        LinkedList<Integer> integers = new LinkedList<>();
+        ArrayList<Object> objects = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            integers.add(i);
+        }
+
+        Iterator<Integer> iterator = integers.iterator();
+        while (iterator.hasNext())
+            System.out.println(iterator.next());
     }
 
-    /**
-     * 输出一个int的二进制数
-     * @param num
-     */
-    private static void printInfo(int num){
-        System.out.println(Integer.toBinaryString(num));
-    }
+
 }
 
 

@@ -17,6 +17,13 @@ JTA：（Java Transaction API）JAVA事务服务。提供各种分布式事务�
 JAF：（Java Action FrameWork）JAVA安全认证框架。提供一些安全控制方面的框架。让开发者通过各种部署和自定义实现自己的个性安全控制策略。
 RMI/IIOP:（Remote Method Invocation /internet对象请求中介协议）他们主要用于通过远程调用服务。例如，远程有一台计算机上运行一个程序，它提供股票分析服务，我们可以在本地计算机上实现对其直接调用。当然这是要通过一定的规范才能在异构的系统之间进行通信。RMI是JAVA特有的。
 
+
+
+1. java 8 中，ThreadLocalMap 中使用开放地址法来处理散列冲突，而HaspMap中使用的是分离链表法，之所以不同，是因为在ThreadLocalMap中散列支散的十分均匀，很少出现冲突，并且ThreadLocalMap经常需要清除无用的对象，使用纯数组更加方便。
+2. ThreadLocalMap通过key（ThreadLocal类型）的hashcode来计算数组存储的索引位置i。如果i位置已经存储了对象，那么就往后挪一个位置依次类推，直到找到空的位置，再将对象存放。另外，在最后还需要判断一下当前的存储的对象个数是否已经超出了阈值（threshold的值）大小，如果超出了，需要重新扩充并将所有的对象重新计算位置。
+3. 
+4. 
+
 # 面向对象
 
 18.结论：
@@ -52,6 +59,12 @@ public class A{
    }
 }
 ~~~
+
+
+
+1. Java 内部类
+
+    ![img](https://uploadfiles.nowcoder.com/images/20180701/3807435_1530425536125_D49BCBCCF82CF58C566E12F1E3130070) 
 
 
 
@@ -104,6 +117,10 @@ public class A{
 
 # 网络编程
 
+1. 客户端通过new Socket() 方法创建通信的Socket 对象，服务器端通过new ServerSocket（）创建TCP连接对象，accept接纳客户端请求。
+
+   
+
 # XML与JSON
 
 # JDBC编程
@@ -118,6 +135,8 @@ public class A{
 子类中可以增加自己特有的方法。
 当子类的方法重载父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。
 当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。
+
+
 
 # web开发
 
