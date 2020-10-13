@@ -3,7 +3,8 @@ package headfirst.duck;
 /**
  * @author luzc
  * @date 2020/9/25 16:24
- * @desc
+ * @desc  面向抽象编程，正是策略模式
+ * 策略模式定义了算法族，使他们之间可以互相替换，此模式让算法的变化独立于使用算法的客户
  */
 public abstract class Duck {
 
