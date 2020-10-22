@@ -40,4 +40,19 @@ public class Sort1 {
         else
             return (double) right.peek();
     }
+
+
+    //b站：舞年落梦解法
+
+//    private Pi
+
+//    public void Insert2(Integer num){
+//
+//    }
+//
+//    public Double GetMedian2(){
+//
+//    }
+
+
 }

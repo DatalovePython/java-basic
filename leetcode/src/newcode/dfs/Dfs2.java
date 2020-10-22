@@ -16,8 +16,10 @@ public class Dfs2 {
 
     private static final int[][] next = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
     private int cnt = 0;
+    //题意中的m,n
     private int rows;
     private int cols;
+    //阀值，题意中的k值
     private int threshold;
     private int[][] digitSum;
 
