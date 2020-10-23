@@ -1,5 +1,9 @@
 package newcode.list;
 
+import com.sun.javaws.jnl.LDUpdater;
+
+import java.util.*;
+
 /**
  * @author luzc
  * @date 2020/10/19 9:49
@@ -11,14 +15,16 @@ package newcode.list;
  * <p>
  * Output:
  * 2
- *
+ * <p>
  * 思路：
  * 要求时间复杂度 O(N)，空间复杂度 O(1)。因此不能使用排序的方法，也不能使用额外的标记数组。
- *
+ * <p>
  * 对于这种数组元素在 [0, n-1] 范围内的问题，可以将值为 i 的元素调整到第 i 个位置上进行求解。
- *
+ * <p>
  * 以 (2, 3, 1, 0, 2, 5) 为例，遍历到位置 4 时，该位置上的数为 2，但是第 2 个位置上已经有一个 2 的值了，因此可以知道 2 重复：
  */
+
+// 这题就用这个方法最合适，好理解而且还快。
 
 public class List1 {
 
@@ -42,5 +48,13 @@ public class List1 {
         int t = nums[i];
         nums[i] = nums[j];
         nums[j] = t;
+    }
+
+    public static void main(String[] args) {
+        int[] test = {2, 3, 1, 0, 2, 5};
+        List1 list1 = new List1();
+        int[] duplication = new int[1];
+        boolean duplicate = list1.duplicate(test, test.length, duplication);
+
     }
 }
