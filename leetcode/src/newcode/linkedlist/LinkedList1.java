@@ -9,7 +9,7 @@ import java.util.Stack;
  * @author luzc
  * @date 2020/10/19 10:22
  * @desc 从尾到头反过来打印出每个结点的值。
- *
+ * <p>
  * 如果是双向链表好做，从后往前就行了
  * 主要考察单向链表如何反转打印。
  * 简单说，单向链表，你如何反转？有哪几个解决方法？哪个方法效率最高。
@@ -50,16 +50,18 @@ public class LinkedList1 {
     }
 
     //使用栈,最简单，好理解。
-    public ArrayList<Integer> printListFromTailToHead3(ListNode listNode){
+    public ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
         Stack<Integer> stack = new Stack<>();
-        while (listNode !=null){
+        while (listNode != null) {
             stack.add(listNode.val);
             listNode = listNode.next;
         }
         ArrayList<Integer> ret = new ArrayList<>();
-        while(!stack.isEmpty())
+        while (!stack.isEmpty())
             ret.add(stack.pop());
         return ret;
     }
+
+
 
 }

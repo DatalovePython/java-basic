@@ -37,7 +37,27 @@ RMI/IIOP:（Remote Method Invocation /internet对象请求中介协议）他们�
    finalize设计的目的是保证对象在被垃圾收集前完成特定资源的回收
    ```
 
-5. 
+5.  ~~~java
+   //case 穿透，如果不存在break，则从匹配到的第一个case开始，后面所有的case语句都执行一次。
+   public static int getValue(int i) {
+           int result = 0;
+           switch (i) {
+               case 1:
+                   result = result + i;
+               case 2:
+                   result = result + i * 2;
+               case 3:
+                   result = result + i * 3;
+               case 4:
+                   result = result + i * 4;
+           }
+           return result;
+       }
+   
+   
+    ~~~
+
+6. 
 
 
 
