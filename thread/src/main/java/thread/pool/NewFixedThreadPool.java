@@ -44,6 +44,16 @@ public class NewFixedThreadPool {
 //                }
 //            });
         }
+        fixedThreadPool.shutdown();
+        while (true){
+            if (fixedThreadPool.isTerminated()){
+                System.out.println("所有线程执行结束！");
+                break;
+            }
+
+        }
+
+
 
     }
 }
