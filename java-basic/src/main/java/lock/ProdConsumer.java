@@ -3,13 +3,14 @@ package lock;
 /**
  * @author luzc
  * @date 2020/6/6 17:14
- * @desc Á½¸öÏß³Ì¿ÉÒÔ²Ù×÷³õÊ¼ÖµÎª0µÄÒ»¸ö±äÁ¿
- * Ò»¸ö+1£¬Ò»¸ö-1.½»Ìæ½øĞĞ£¬¹²½øĞĞ10ÂÖ£¬±äÁ¿³õÊ¼Öµ±äÎª0
+ * @desc ä¸¤ä¸ªçº¿ç¨‹å¯ä»¥æ“ä½œåˆå§‹å€¼ä¸º0çš„ä¸€ä¸ªå˜é‡
+ * ä¸€ä¸ª+1ï¼Œä¸€ä¸ª-1.äº¤æ›¿è¿›è¡Œï¼Œå…±è¿›è¡Œ10è½®ï¼Œå˜é‡åˆå§‹å€¼å˜ä¸º0
  * <p>
- * 1£»¸ßÄÚ¾ÛµÍñîºÏÇ°Ìá
- * 2£ºÅĞ¶Ï+¸É»î+Í¨Öª
- * 3£º·ÀÖ¹Ïß³ÌµÄĞé¼Ù»½ĞÑ£¬Ö»ÒªÓĞwaitºÍwhileÅĞ¶Ï(¶àÏß³ÌÏß³Ìµ÷¶ÈÅĞ¶Ï²»ÄÜÓÃif£¬ÒªÓÃwhile)
+ * 1ï¼›é«˜å†…èšä½è€¦åˆå‰æ
+ * 2ï¼šåˆ¤æ–­+å¹²æ´»+é€šçŸ¥
+ * 3ï¼šé˜²æ­¢çº¿ç¨‹çš„è™šå‡å”¤é†’ï¼Œåªè¦æœ‰waitå’Œwhileåˆ¤æ–­(å¤šçº¿ç¨‹çº¿ç¨‹è°ƒåº¦åˆ¤æ–­ä¸èƒ½ç”¨ifï¼Œè¦ç”¨while)
  */
+
 public class ProdConsumer {
     public static void main(String[] args) {
         AirCondition airCondition = new AirCondition();
@@ -39,27 +40,29 @@ class AirCondition {
     private int num = 0;
 
     public synchronized void increment() throws InterruptedException {
-        //1 ÅĞ¶Ï
+        //1 åˆ¤æ–­
         if (num != 0) {
             this.wait();
         }
-        // 2 ¸É»î
+        // 2 å¹²æ´»
         num++;
         System.out.println(Thread.currentThread().getName()+"\t"+num);
-        //3 Í¨Öª
+        //3 é€šçŸ¥
         this.notifyAll();
 
     }
 
     public synchronized void decrement() throws InterruptedException{
-        //1 ÅĞ¶Ï
+        //1 åˆ¤æ–­
         if (num == 0) {
             this.wait();
         }
-        // 2 ¸É»î
+        // 2 å¹²æ´»
         num--;
         System.out.println(Thread.currentThread().getName()+"\t"+num);
-        //3 Í¨Öª
+        //3 é€šçŸ¥
         this.notifyAll();
     }
 }
+
+
