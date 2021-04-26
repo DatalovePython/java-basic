@@ -5,6 +5,7 @@ package bean;
  * @date 2020/8/14 9:07
  * @desc
  */
+
 public class Person implements Comparable<Person> {
     private int age;
 
@@ -40,4 +41,14 @@ public class Person implements Comparable<Person> {
     public void getString(){
 
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+
 }

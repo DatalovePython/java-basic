@@ -4,9 +4,11 @@ import com.luzc.bean.Person;
 import com.luzc.config.MainConfig;
 import com.luzc.config.MainConfig2;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -67,6 +69,15 @@ public class IOCTest {
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
         }
+
+    }
+
+    @Test
+    public void test(){
+        Person person = new Person("1", null);
+        Person person2 = new Person("1", 1);
+        BeanUtils.copyProperties(person,person2);
+        System.out.println(person2);
 
     }
 

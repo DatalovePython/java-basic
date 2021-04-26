@@ -6,25 +6,21 @@ package test;
  * @desc
  */
 
-import java.io.Console;
-import java.lang.String;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.time.LocalDateTime;
 
 public class lang {
 
-    public static void main(String[] args) {
-        LinkedList<Integer> integers = new LinkedList<>();
-        ArrayList<Object> objects = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            integers.add(i);
-        }
 
-        Iterator<Integer> iterator = integers.iterator();
-        while (iterator.hasNext())
-            System.out.println(iterator.next());
+    protected String a;
+
+    public static void main(String[] args) {
+        LocalDateTime currentTime = LocalDateTime.now();
+        System.out.println(currentTime);
+        int todayOfWeek = currentTime.getDayOfWeek().getValue();
+        System.out.println(todayOfWeek);
+
+
+
     }
 
 
