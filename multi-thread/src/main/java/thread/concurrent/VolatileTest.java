@@ -3,7 +3,7 @@ package thread.concurrent;
 import java.util.concurrent.TimeUnit;
 
 /*
-    1:一开始如果不给number 加 volatie 关键字，则线程之间是不可见的。例如A线程改了主内存中的number 值，其他线程不可见
+    1:一开始如果不给number 加 volatile 关键字，则线程之间是不可见的。例如A线程改了主内存中的number 值，其他线程不可见
     总而言之，volatile 关键字，实现了线程间的立即通信，是JVM提供的轻量级的同步机制，乞丐版的synchronized
 
     内存模型：各个线程对主内存中共享变量的操作都是各个线程各自拷贝到自己的工作内存进行操作后再写回主内存中的
